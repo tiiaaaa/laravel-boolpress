@@ -5,41 +5,41 @@
 @section('content')
 <section class="container-fluid p-5" id="add-form">
 
-	{{-- <div class="row">
+	<div class="row">
 		<div class="col-12 mb-3">
-			<a href="{{ route('posts.index') }}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Back</a>
+			<a href="{{ route('admin.posts.index') }}" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Back</a>
 		</div>
-	</div> --}}
+	</div>
 
-    <form class="row row-cols-4 g-3 flex-column align-items-center" method="POST">
+    <form class="row row-cols-4 g-3 flex-column align-items-center" action="{{ route('admin.posts.store') }}" method="POST">
         @csrf
         <div class="col">
             <h2>
                 Creazione nuovo post
             </h2>
-            @if ( $errors->any() )
+            {{-- @if ( $errors->any() )
             <ul class="alert alert-danger">
                 @foreach ( $errors->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
-            @endif
+            @endif --}}
         </div>
         <div class="col">
-            <label for="numero_telaio">Nome del post</label>
-            <input type="text" name="numero_telaio" id="numero_telaio" class="form-control">
+            <label for="name">Nome del post</label>
+            <input type="text" name="name" id="name" class="form-control">
 		</div>
         <div class="col">
-            <label for="model">Descrizione</label>
-            <input type="text" name="model" id="model" class="form-control">
+            <label for="description">Descrizione</label>
+            <input type="text" name="description" id="description" class="form-control">
         </div>
         <div class="col">
-            <label for="porte">Inserisci un immagine</label>
-            <input type="text" name="porte" id="porte" class="form-control">
+            <label for="url_immage">Inserisci un immagine</label>
+            <input type="text" name="url_immage" id="url_immage" class="form-control">
         </div>
         <div class="col">
-            <label for="data_immatricolazione">Data di pubblicazione</label>
-            <input type="date" name="data_immatricolazione" id="data_immatricolazione" class="form-control">
+            <label for="pubblication_date">Data di pubblicazione</label>
+            <input type="date" name="pubblication_date" id="pubblication_date" class="form-control">
         </div>
 
         <div class="col text-center">

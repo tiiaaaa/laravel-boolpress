@@ -38,7 +38,17 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Inserire anche Validate, ovvero la validazione/controllo dei dati inserriti dall'utente
+        $data = $request->all();
+
+        $newPost = new Post;
+        $newPost->name = $data['name'];
+        $newPost->description = $data['description'];
+        $newPost->url_immage = $data['url_immage'];
+        $newPost->pubblication_date = $data['pubblication_date'];
+        $newPost->save();
+
+        return redirect()->route('admin.posts.show', $newPost->id)->with('message', 'Post creato correttamente');
     }
 
     /**
@@ -84,6 +94,8 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return redirect()->route('admin.posts.index')->with('message', 'Post deleted correctly');
     }
 }
