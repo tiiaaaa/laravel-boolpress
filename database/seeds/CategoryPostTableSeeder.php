@@ -18,10 +18,10 @@ class CategoryPostTableSeeder extends Seeder
         $category_ids = Category::pluck('id')->toArray();
 
         //!prendo tutti in post
-        $post = Post::all();
+        $posts = Post::all();
 
         foreach ($posts as $post) {
-            $post->categories()->attach($faker->randomElements($category_ids));
+            $post->categories()->attach($faker->randomElement($category_ids));
         }
     }
 }
