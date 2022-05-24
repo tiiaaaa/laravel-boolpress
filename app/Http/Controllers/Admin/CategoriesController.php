@@ -25,7 +25,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $newCategory = new Category;
+        $newCategory->fill($data);
+        $newCategory->save();
+
+        return redirect()->route('admin.categories.show', $newCategory->id)->with('message', 'New category add');
     }
 
     /**
@@ -47,7 +53,8 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        return view('admin.categories.show', ['category' => $category]);
     }
 
     /**

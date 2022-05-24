@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index(){
 
-        return view('posts.home');
+        return view('admin.posts.home');
     }
 }
