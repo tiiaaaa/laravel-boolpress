@@ -27,5 +27,6 @@ Route::middleware('auth')
 ->prefix('admin')
 ->group(function(){
     Route::resource('posts', 'PostsController');
+    Route::resource('categories', 'CategoriesController');
 });
 
