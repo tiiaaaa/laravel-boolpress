@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <Post/>
+    <div class="row flex-wrap">
+        <Post v-for="(post, index) in posts" :key="index" :post='post'/>
     </div>
 </template>
 
@@ -41,6 +41,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss' scoped>
 
 </style>

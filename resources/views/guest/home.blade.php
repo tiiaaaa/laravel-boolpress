@@ -17,7 +17,7 @@
         {{-- link al js --}}
         <script src="{{asset('js/front.js')}}" defer></script>
 
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref not-full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -31,10 +31,10 @@
                     @endauth
                 </div>
             @endif
+        </div>
 
-            <div id="root">
+        <div id="root">
 
-            </div>
         </div>
 
     </body>

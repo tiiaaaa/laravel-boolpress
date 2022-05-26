@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container-fluid">
         <PostList/>
     </div>
 </template>
@@ -15,6 +15,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss' scoped>
+
+
 
 </style>

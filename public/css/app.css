@@ -11249,31 +11249,25 @@ textarea.form-control-lg {
 }
 html, body {
   background-color: #fff;
-  color: #636b6f;
   font-family: "Nunito", sans-serif;
-  font-weight: 200;
-  height: 100vh;
+  font-weight: 500;
   margin: 0;
 }
 
-.full-height {
-  height: 100vh;
+.not-full-height {
+  height: 10vh;
+  padding: 0 1rem;
 }
 
 .flex-center {
   align-items: center;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
 }
 
 .position-ref {
   position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
 }
 
 .content {
@@ -11292,8 +11286,4 @@ html, body {
   letter-spacing: 0.1rem;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.m-b-md {
-  margin-bottom: 30px;
 }
