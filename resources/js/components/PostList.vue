@@ -24,7 +24,9 @@ export default {
         getPosts(){
             axios.get('http://localhost:8000/api/posts')
                 .then((result)=>{
-                    console.log(result.data.data);
+                    // console.log(result.data.results.data);
+                    this.posts = result.data.results.data;
+                    // console.log(this.posts);
                 })
                 .catch((error)=>{
                     console.warn(error);

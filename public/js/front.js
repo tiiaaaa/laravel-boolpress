@@ -1949,8 +1949,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getPosts: function getPosts() {
+      var _this = this;
+
       axios.get('http://localhost:8000/api/posts').then(function (result) {
-        console.log(result.data.data);
+        // console.log(result.data.results.data);
+        _this.posts = result.data.results.data; // console.log(this.posts);
       })["catch"](function (error) {
         console.warn(error);
       });
