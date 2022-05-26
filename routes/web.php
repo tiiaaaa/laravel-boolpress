@@ -30,3 +30,7 @@ Route::middleware('auth')
     Route::resource('categories', 'CategoriesController');
 });
 
+Route::get("{any?}", function() {
+    return view('guest.home');
+})->where("any", ".*");
+
