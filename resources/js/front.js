@@ -12,11 +12,29 @@ window.Vue.use(VueRouter);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 import Contact from "./pages/Contact.vue";
-import Post from "./pages/Post.vue";
+import Posts from "./pages/Posts.vue";
 
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/contact-us',
+            name: 'contacts',
+            component: Contact
+        },
+
+        {
+            path: '/posts',
+            name: 'posts',
+            component: Posts
+        },
+    ]
+})
 
 
 const app = new Vue({
     el: '#root',
+    router,
     render: h => h(App)
+
 });

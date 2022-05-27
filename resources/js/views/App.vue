@@ -1,22 +1,23 @@
 <template>
-    <div class="container-fluid">
-        <PostList/>
+    <div>
+        <Header/>
+        <Main/>
     </div>
 </template>
 
 <script>
-import PostList from '../components/PostList.vue'
+import Header from '../components/Header.vue';
+import Main from '../components/Main.vue';
 export default {
     name: "App",
     components: {
-        PostList,
+        Header,
+        Main,
     }
 
 }
 </script>
 
 <style lang='scss' scoped>
-
-
 
 </style>
